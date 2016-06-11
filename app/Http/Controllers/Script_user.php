@@ -15,7 +15,7 @@ class Script_user extends Controller
      */
     public function index()
     {
-        //
+        return view('Script_user');
     }
 
     /**

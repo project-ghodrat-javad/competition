@@ -15,7 +15,7 @@ class Acaunt_user extends Controller
      */
     public function index()
     {
-        //
+        return view('Acaunt_user');
     }
 
     /**

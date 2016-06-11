@@ -1,6 +1,7 @@
 
+
 @extends('layouts.Master_Profile')
-@section('content')
+@section('p_content')
 
     <div id="profile2-content" data-bind="visible: true" style="">
 

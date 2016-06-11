@@ -15,7 +15,8 @@ class Forum_user extends Controller
      */
     public function index()
     {
-        //
+        return view('Forum_user');
+
     }
 
     /**

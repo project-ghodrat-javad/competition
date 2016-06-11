@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class Profile extends Controller
+class teamcontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class Profile extends Controller
      */
     public function index()
     {
-        return view('Profile');
+        return view('team');
     }
 
     /**

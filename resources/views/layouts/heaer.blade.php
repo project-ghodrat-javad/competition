@@ -144,15 +144,15 @@
     <div id="header2" class="">
         <div id="header2-inside" class="">
             <ul id="header-control">
-                <li id="header-logout"><a href="/account/logoff" class="logout-link">ثبت نام</a></li>
-                <li id="header-login"><a href="https://www.kaggle.com/account/login?returnUrl=%2Fcompetitions" class="login-link">ورود</a></li>
+                <li id="header-logout"><a href="{{ url('/register') }}" class="logout-link">ثبت نام</a></li>
+                <li id="header-login"><a href="https://www.kaggle.com/account/login?returnUrl=%2Fcompetitions" class="login-link">اسم کاربر</a></li>
             </ul>
             <ul id="header-ul">
                 <li>
                     <a href="/solutions/competitions">میزبان</a>
                 </li>
                 <li>
-                    <a href="/competitions">مسابقات</a>
+                    <a href="/Competitions">مسابقات</a>
                 </li>
                 <li>
                     <a href="/datasets">پایگاه داده</a>

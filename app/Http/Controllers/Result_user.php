@@ -15,7 +15,7 @@ class Result_user extends Controller
      */
     public function index()
     {
-        //
+        return view('Result_user');
     }
 
     /**

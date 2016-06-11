@@ -204,7 +204,7 @@
                             <li>
                                 <a href="/ComDetails/prizes">جایزه</a>                    </li>
                             <li>
-                                <a href="/ComDetails/timeline">مدت زمان</a>                    </li>
+                                <a href="/Timeline">مدت زمان</a>                    </li>
 
                         </ul>
                     </li>

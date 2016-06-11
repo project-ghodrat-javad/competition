@@ -26,6 +26,7 @@ Route::get('Timeline' , 'Timeline@index');
 Route::get('Rules' , 'Rules@index');
 Route::get('Prizes' , 'Prizes@index');
 Route::get('Data' , 'Data@index');
+Route::get('team' , 'teamcontroller@index');
 Route::get('Evaluation' , 'Evaluation@index');
 
 //Route::get('Profile', 'Profile@index');
@@ -33,6 +34,11 @@ Route::get('Result_user' , 'Result_user@index');
 Route::get('Script_user' , 'Script_user@index');
 Route::get('Forum_user' , 'Forum_user@index');
 Route::get('Acaunt_user' , 'Acaunt_user@index');
+Route::get('Pro_user' , 'Pro_user@index');
+
+
+
+Route::get('script' , 'scriptcntroller@index');
 
 
 
