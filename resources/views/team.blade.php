@@ -16,8 +16,9 @@
         <h3>مدیریت تیم </h3>
 
         <div id="team-edit" data-bind="with: team, visible: true">
-            <form action="/c/avito-duplicate-ads-detection/submit" class="_buttons team-action" method="get">                <input value="Make a Submission" type="submit">
-                <p>on behalf of your team.</p>
+            <form action="/c/avito-duplicate-ads-detection/submit" class="_buttons team-action" method="get">
+                <input value="ایجاد یک نظر" type="submit">
+                {{--<p>on behalf of your team.</p>--}}
             </form>
             <div id="team-name-div" class="field">
                 <input value="GhodratHeydari" class="input" id="team-name-input" name="teamName" data-bind="value: name, valueUpdate: 'afterkeydown'" type="text">
@@ -41,7 +42,7 @@
                             </a>
                             <div class="user-details">
                                 <h3><a href="https://www.kaggle.com/ghodrat" target="_blank" data-bind="text: name, attr: { href: url }">GhodratHeydari</a></h3>
-                                <h4 data-bind="visible: id == $parent.teamLeaderId()">Team Leader</h4>
+                                <h4 data-bind="visible: id == $parent.teamLeaderId()">مدیر تیم</h4>
                                 <h4 style="display: none;" data-bind="visible: id != $parent.teamLeaderId()"><a href="https://www.kaggle.com/t/337758/ghodratheydari/leader/598228" data-bind="attr: { href: $parent.makeTeamLeaderUrl($data) }">Make Leader</a></h4>
                             </div>
                         </li>
@@ -58,7 +59,8 @@
                     <table id="pending-invites" class="full nicetable roomy" data-bind="visible: activeInvites().length, foreach: activeInvites" style="display:none;"></table>
 
                     <div id="invite-member">
-                        <label>Invite someone to join your team</label>
+                        <label>دعوت از شخصی برای پیوستن به تیم</label>
+                        {{--<label>Invite someone to join your team</label>--}}
                         <form id="invite-member-form" data-bind="submit: $root.inviteMemberByEmail">
                             <div>
                                 <input name="email" id="invite-member-email" placeholder="آدرس ایمیل" style="width: 60%;" type="text">
@@ -68,7 +70,8 @@
                     </div>
 
                     <div id="invite-merger">
-                        <label>Invite a team to merge with yours</label>
+                        <label>دعوت از یک تیم برای پیوستن به تیم شما</label>
+                        {{--<label>Invite a team to merge with yours</label>--}}
                         <form id="invite-merger-form" data-bind="submit: $root.inviteMergerByEmail">
                             <div>
                                 <input name="email" id="invite-merger-email" placeholder="آدرس ایمیل سرگروه تیم" style="width:60%;" type="text">

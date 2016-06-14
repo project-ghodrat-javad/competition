@@ -41,4 +41,8 @@ Route::get('Pro_user' , 'Pro_user@index');
 Route::get('script' , 'scriptcntroller@index');
 
 
+Route::get('forum' , 'forumcntroller@index');
+
+
+
 

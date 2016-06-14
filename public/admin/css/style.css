@@ -6,9 +6,9 @@ body,li,p,h1,h2,h3,ul{
 }
 @font-face {
     font-family: "BYekan";
-    src: url("../../public/admin/font/BYekan.eot?#") format("eot"),
-	url("../../public/admin/font/BYekan.woff") format("woff"),
-	url("../../public/admin/font/BYekan.ttf") format("truetype");
+    src: url("../../fonts/fonts/eot/IRANSansWeb_Bold.eot?#iefix") format("eot"),
+	url("../../fonts/fonts/woff/IRANSansWeb_Bold.woff") format("woff"),
+	url("../../fonts/fonts/ttf/IRANSansWeb_Bold.ttf") format("truetype");
 }
 li{
 	list-style:none
@@ -21,7 +21,7 @@ body{
 	font:8pt/1.7 Tahoma, Geneva, sans-serif;
 }
 body{
-	background:url(nav.png) right repeat-y;
+	background:url(../image/nav.png) right repeat-y;
 }
 div.menu{
 	width:100%;
@@ -34,7 +34,7 @@ div.menu{
 	box-shadow:0 1px 5px rgba(0, 0, 0, 0.6);
 }
 a.logo{
-	background:url(../../public/admin/image/logo.png);
+	background:url(../image/logo.png);
 	width:151px;
 	height:45px;
 	position:absolute;

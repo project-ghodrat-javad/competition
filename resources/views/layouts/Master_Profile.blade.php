@@ -1,5 +1,5 @@
 
-@extends('layouts.heaer')
+@extends('layouts.new')
 
 @section('content')
 

@@ -4,40 +4,44 @@
 
     <link rel="stylesheet" href="fonts/css/font-style.css">
     <title>BigData</title>
-    <link href="/content/v/4e3f994e938b/kaggle/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    {{--<link href="/content/v/4e3f994e938b/kaggle/favicon.ico" rel="shortcut icon" type="image/x-icon">--}}
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/base.less" type="text/css">
     <link rel="stylesheet" href="css/kaggle-site.less" type="text/css">
     <link rel="stylesheet" href="css/style.css" id="intercom-styles" type="text/css">
-    <script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript"></script><script src="js/ga.js" async="" type="text/javascript"></script><script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript"></script><script src="js/ga.js" async="" type="text/javascript"></script><script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript">
-    </script><script src="js/ga.js" async="" type="text/javascript">
-    </script><script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    {{--<script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript"></script>--}}
+    <script src="js/ga.js" async="" type="text/javascript"></script>
+    {{--<script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript"></script>--}}
+    {{--<script src="js/ga.js" async="" type="text/javascript"></script>--}}
+    {{--<script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript"></script>--}}
+    {{--<script src="js/ga.js" async="" type="text/javascript"></script>--}}
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.9.2.min.js"></script>
     <script type="text/javascript" src="js/kaggle.min.js"></script>
-    <script type="text/javascript">
-        Kaggle.Current.siteId = 1;
-        Kaggle.Current.userId = 598228;
-    </script>
+    {{--<script type="text/javascript">--}}
+        {{--Kaggle.Current.siteId = 1;--}}
+        {{--Kaggle.Current.userId = 598228;--}}
+    {{--</script>--}}
     <!--[if (gte IE 6)&(lte IE 8)]>
-    <script type="text/javascript" src="/content/v/f1f17fea7cee/shared/js/ie/selectivizr.min.js"></script>
+    <!--<script type="text/javascript" src="/content/v/f1f17fea7cee/shared/js/ie/selectivizr.min.js"></script>-->
     <![endif]-->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    {{--<link rel="apple-touch-icon" href="img/apple-touch-icon.png">--}}
     <!--[if lt IE 9]>
-    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <!--<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
     <![endif]-->
-    <script>
-        window.intercomSettings = {
-            app_id: "koj6gxx6"
-        };
-    </script>
-    <script>(function(){var w=window;var ic=w.Intercom;
-	if(typeof ic==="function"){ic('reattach_activator');
-	ic('update',intercomSettings);}else{var d=document;
-	var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){
-	var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/koj6gxx6';
-	var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}
-	else{w.addEventListener('load',l,false);}}})()</script>
+    {{--<script>--}}
+        {{--window.intercomSettings = {--}}
+            {{--app_id: "koj6gxx6"--}}
+        {{--};--}}
+    {{--</script>--}}
+    {{--<script>(function(){var w=window;var ic=w.Intercom;--}}
+	{{--if(typeof ic==="function"){ic('reattach_activator');--}}
+	{{--ic('update',intercomSettings);}else{var d=document;--}}
+	{{--var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){--}}
+	{{--var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/koj6gxx6';--}}
+	{{--var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}--}}
+	{{--else{w.addEventListener('load',l,false);}}})()</script>--}}
 
 </head>
 
@@ -58,7 +62,7 @@
             </ul>
             <ul id="header-ul">
                 <li>
-                    <a href="/solutions/competitions">میزبان</a>
+                    <a href="/Pro_user">میزبان</a>
                 </li>
                 <li>
                     <a href="/Competitions">مسابقات</a>
@@ -106,7 +110,8 @@
     <!-- End header-inside and header -->
 
 	<div id="main">
-        <div id="competition"> <!--           i ma          @html.attr('class',="" 'prospecting',="" competition.inprospectingphase).add(ispreview="" ?="" 'preview'="" :="" '')="">    -->
+        <div id="competition">
+            <!-- i ma  @html.attr('class',="" 'prospecting',="" competition.inprospectingphase).add(ispreview="" ?="" 'preview'="" :="" '')="">    -->
             <header id="comp-header">
 
             <div id="comp-header-details">
@@ -171,8 +176,6 @@
         </script>
         <div class="comp-sidebar">
 
-
-
             <div class="_panel" id="competition-dashboard" style="direction:rtl">
                 <header>
                     <h1>داشبورد</h1>
@@ -200,16 +203,16 @@
                             <li>
                                 <a href="/ComDetails/evaluation">ارزیابی</a>                    </li>
                             <li>
-                                <a href="/ComDetails/rules">قواعد</a>                    </li>
+                                <a href="/Rules">قواعد</a>                    </li>
                             <li>
-                                <a href="/ComDetails/prizes">جایزه</a>                    </li>
+                                <a href="/Prizes">جایزه</a>                    </li>
                             <li>
                                 <a href="/Timeline">مدت زمان</a>                    </li>
 
                         </ul>
                     </li>
 
-                    <li class="cd-forum"><a href="/ComDetails/forums">تالار گفتگو</a></li>
+                    <li class="cd-forum"><a href="/forum">تالار گفتگو</a></li>
 
                     <li class="cd-scripts" >
                         <a class="comp-link" href="/ComDetails/scripts">اسکریپت ها </a>
@@ -220,7 +223,7 @@
                     </li>
 
                     <li class="cd-leaderboard">
-                        <a href="https://www.kaggle.com/c/draper-satellite-image-chronology/leaderboard">سایر</a>
+                        <a href="/team">ایجاد تیم</a>
                         <a href="https://www.kaggle.com/c/draper-satellite-image-chronology/leaderboard">سایر</a>
                         <a href="https://www.kaggle.com/c/draper-satellite-image-chronology/leaderboard">سایر</a>
                         <a href="https://www.kaggle.com/c/draper-satellite-image-chronology/leaderboard">سایر</a>
@@ -232,11 +235,11 @@
                 </ul>
             </div>
 
-            <script type="text/javascript">
-                $(function () {
-                    $(".cd-home").addClass("selected");
-                });
-            </script>
+            {{--<script type="text/javascript">--}}
+                {{--$(function () {--}}
+                    {{--$(".cd-home").addClass("selected");--}}
+                {{--});--}}
+            {{--</script>--}}
 
 
            <!-- <div id="partial-mini-leaderboard">   
@@ -260,26 +263,28 @@
                     </ol>
                 </div>
             </div>-->
-            <script type="text/javascript">
-                jQuery(function ($) {
-                    $("#partial-mini-leaderboard").load("/c/5229/partial/mini-leaderboard");
-                });
-            </script>
-            
-            <script type="text/javascript">
-                jQuery(function ($) {
-                    $("#partial-mini-scripts").load("/c/5229/scripts/hot/widget");
-                });
-            </script>
+
+            {{--22.03.95--}}
+            {{--<script type="text/javascript">--}}
+                {{--jQuery(function ($) {--}}
+                    {{--$("#partial-mini-leaderboard").load("/c/5229/partial/mini-leaderboard");--}}
+                {{--});--}}
+            {{--</script>--}}
+            {{----}}
+            {{--<script type="text/javascript">--}}
+                {{--jQuery(function ($) {--}}
+                    {{--$("#partial-mini-scripts").load("/c/5229/scripts/hot/widget");--}}
+                {{--});--}}
+            {{--</script>--}}
 
 
-            
-            
-            <script type="text/javascript">
-                jQuery(function ($) {
-                    $("#partial-stats-ticker").load("/c/5229/partial/stats");
-                });
-            </script>
+            {{----}}
+            {{----}}
+            {{--<script type="text/javascript">--}}
+                {{--jQuery(function ($) {--}}
+                    {{--$("#partial-stats-ticker").load("/c/5229/partial/stats");--}}
+                {{--});--}}
+            {{--</script>--}}
         </div>
         <div class="description comp-content with-sidebar _panel">
             <header class="info">
@@ -295,13 +300,6 @@
         </div>
     </div>
 </div>
-	
-
-
-
-    
-
-
 
 
 </div>
@@ -318,9 +316,6 @@
             </div>
         </div>-->
        <!-- <div id="footer-copyright">
-
-
-
             ? 2016 bigdata Inc
         </div>	-->
         <div id="footer-links">
@@ -335,19 +330,19 @@
  <!--end footer-->
 
 
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-12629138-1']);
-    _gaq.push(['_trackPageview']);
-    _gaq.push(['_trackPageLoadTime']);
-    _gaq.push(['_setCustomVar', 1, 'usertype', 'registered', 2]);
-    _gaq.push(['_setCustomVar', 2, 'userid', '598228', 2]);
-    (function () {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-</script>
+{{--<script type="text/javascript">--}}
+    {{--var _gaq = _gaq || [];--}}
+    {{--_gaq.push(['_setAccount', 'UA-12629138-1']);--}}
+    {{--_gaq.push(['_trackPageview']);--}}
+    {{--_gaq.push(['_trackPageLoadTime']);--}}
+    {{--_gaq.push(['_setCustomVar', 1, 'usertype', 'registered', 2]);--}}
+    {{--_gaq.push(['_setCustomVar', 2, 'userid', '598228', 2]);--}}
+    {{--(function () {--}}
+        {{--var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;--}}
+        {{--ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';--}}
+        {{--var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);--}}
+    {{--})();--}}
+{{--</script>--}}
 <script type="text/javascript">
     /**
      * Function that tracks a click on an outbound link in Google Analytics.

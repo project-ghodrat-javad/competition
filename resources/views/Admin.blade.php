@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Untitled Document</title>
+    <link rel="stylesheet" href="fonts/css/font-style.css">
     <link type="text/css" rel="stylesheet" href="admin/css/style.css">
     <script type="text/javascript" src="admin/js/jquery.min.js"></script>
     <script type="text/javascript" src="admin/js/jquery.flot.js"></script>
