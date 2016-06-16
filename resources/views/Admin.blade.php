@@ -3,11 +3,22 @@
 <head>
     <meta charset="utf-8">
     <title>Untitled Document</title>
-    <link rel="stylesheet" href="fonts/css/font-style.css">
     <link type="text/css" rel="stylesheet" href="admin/css/style.css">
     <script type="text/javascript" src="admin/js/jquery.min.js"></script>
     <script type="text/javascript" src="admin/js/jquery.flot.js"></script>
     <script type="text/javascript" src="admin/js/doc.js"></script>
+
+
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/base.less" type="text/css">
+    <link rel="stylesheet" href="css/kaggle-site.less" type="text/css">
+    <link rel="stylesheet" href="css/style.css" id="intercom-styles" type="text/css">
+    <script src="js/ga.js" async="" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.9.2.min.js"></script>
+    <script type="text/javascript" src="js/kaggle.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -15,7 +26,6 @@
     <div class="menu">
 
     </div>
-
 
 
 
@@ -73,6 +83,22 @@
 
                 </ul>
             </li>
+
+
+
+            <li>
+                <div class="fix">
+                    <span class="ico"><img src="admin/image/ico6.png"></span>
+                    <span class="value"> مدیریت زبان های برنامه نویسی</span>
+                </div>
+                <ul>
+                    <li><a href="">ثبت زبان </a></li>
+
+                </ul>
+            </li>
+
+
+
             <li>
                 <div class="fix">
                     <span class="ico"><img src="admin/image/lock.png"></span>
@@ -92,11 +118,15 @@
         <ul data-collapse="collapse" class="quick">
 
         </ul>
-        <h2>نمونه فیلد ها</h2>
+        {{--<h2>نمونه فیلد ها</h2>--}}
+        @yield('content')
     </div>
 
 
 </div>
 
+
+
+@yield('Footer')
 </body>
 </html>

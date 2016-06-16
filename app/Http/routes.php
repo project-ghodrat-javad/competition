@@ -37,11 +37,13 @@ Route::get('Acaunt_user' , 'Acaunt_user@index');
 Route::get('Pro_user' , 'Pro_user@index');
 
 
+Route::resource('/language','LanguageController');
 
 Route::get('script' , 'scriptcntroller@index');
 
 
 Route::get('forum' , 'forumcntroller@index');
+Route::get('hst' , 'Hostcntroller@index');
 
 
 

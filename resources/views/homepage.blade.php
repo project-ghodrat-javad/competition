@@ -1,2 +1,2 @@
 
-@extends('layouts.new')
+@extends('new')

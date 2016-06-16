@@ -1,2 +1,2 @@
 
-@extends('layouts.masterpage')
+@extends('layouts.Master_ComDetails')

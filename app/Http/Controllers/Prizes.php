@@ -12,7 +12,7 @@ class Prizes extends Controller
 
     public function index()
     {
-        return view('Prizes');
+        return view('admin.PageAdmin');
     }
 
 

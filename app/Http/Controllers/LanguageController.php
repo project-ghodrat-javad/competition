@@ -3,19 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\LanguageModel;
 use App\Http\Requests;
+use App\Http\Requests\LanguageRequest;
 
-class UserController extends Controller
+class LanguageController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($page=1)
     {
-        return view('test');
+
+        if($page==0)
+        {
+            return redirect('/');
+        }
+        $model=LanguageModel::orderby('id_langs','desc')->get();
+        $total=LanguageModel::count();
+        return view('admin.PageAdmin',['model'=>$model,'page'=>$page,'total'=>$total]);
     }
 
     /**
@@ -34,9 +42,13 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LanguageRequest $request)
     {
-        //
+        $model = new LanguageModel($request->all());
+
+        $model->save();
+
+        return redirect('/language');
     }
 
     /**
@@ -81,6 +93,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $Category=LanguageModel::where('id_langs',$id)->delete();
+        return redirect('/language');
     }
 }

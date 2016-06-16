@@ -9,15 +9,12 @@
     <link rel="stylesheet" href="css/base.less" type="text/css">
     <link rel="stylesheet" href="css/kaggle-site.less" type="text/css">
     <link rel="stylesheet" href="css/style.css" id="intercom-styles" type="text/css">
-    {{--<script src="" async="" type="text/javascript"></script>--}}
     <script src="js/ga.js" async="" type="text/javascript"></script>
-    {{--<script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript"></script>--}}
-    {{--<script src="js/ga.js" async="" type="text/javascript"></script>--}}
-    {{--<script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript"></script>--}}
-    {{--<script src="js/ga.js" async="" type="text/javascript"></script>--}}
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.9.2.min.js"></script>
     <script type="text/javascript" src="js/kaggle.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
     {{--<script type="text/javascript">--}}
         {{--Kaggle.Current.siteId = 1;--}}
         {{--Kaggle.Current.userId = 598228;--}}
@@ -25,7 +22,7 @@
     <!--[if (gte IE 6)&(lte IE 8)]>
     <!--<script type="text/javascript" src="/content/v/f1f17fea7cee/shared/js/ie/selectivizr.min.js"></script>-->
     <![endif]-->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
     {{--<link rel="apple-touch-icon" href="img/apple-touch-icon.png">--}}
     <!--[if lt IE 9]>
     <!--<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
