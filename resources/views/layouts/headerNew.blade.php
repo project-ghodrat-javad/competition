@@ -1,7 +1,15 @@
 
 <html>
+<<<<<<< HEAD
 <head>
 
+=======
+
+
+<head>
+
+    {{--<link rel="stylesheet" href="css/font-awesome.min.css">--}}
+>>>>>>> origin/master
     <link rel="stylesheet" href="fonts/css/font-style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>مسابقات داده</title>
@@ -9,6 +17,7 @@
     <link rel="stylesheet" href="css/base.less" type="text/css">
     <link rel="stylesheet" href="css/kaggle-site.less" type="text/css">
     <link rel="stylesheet" href="css/style.css" id="intercom-styles" type="text/css">
+<<<<<<< HEAD
     <script src="js/ga.js" async="" type="text/javascript"></script>
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.9.2.min.js"></script>
@@ -39,6 +48,37 @@
                     {{--var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/koj6gxx6';--}}
                     {{--var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}--}}
                 {{--else{w.addEventListener('load',l,false);}}})()</script>--}}
+=======
+    <script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript"></script><script src="js/ga.js" async="" type="text/javascript"></script><script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript"></script><script src="js/ga.js" async="" type="text/javascript"></script><script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript">
+    </script><script src="js/ga.js" async="" type="text/javascript">
+    </script><script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.9.2.min.js"></script>
+    <script type="text/javascript" src="js/kaggle.min.js"></script>
+    <script type="text/javascript">
+        Kaggle.Current.siteId = 1;
+        Kaggle.Current.userId = 598228;
+    </script>
+    <!--[if (gte IE 6)&(lte IE 8)]>
+    <script type="text/javascript" src="/content/v/f1f17fea7cee/shared/js/ie/selectivizr.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        window.intercomSettings = {
+            app_id: "koj6gxx6"
+        };
+    </script>
+    <script>(function(){var w=window;var ic=w.Intercom;
+            if(typeof ic==="function"){ic('reattach_activator');
+                ic('update',intercomSettings);}else{var d=document;
+                var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){
+                    var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/koj6gxx6';
+                    var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}
+                else{w.addEventListener('load',l,false);}}})()</script>
+>>>>>>> origin/master
 
 </head>
 
