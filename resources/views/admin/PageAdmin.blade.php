@@ -8,7 +8,7 @@
         <div style="width:95%;height:3px;background:#48adff;margin:auto;margin-bottom:30px;"></div>
 
 
-        <form action="/language" method="post">
+        <form action="<?= Url('admin/language') ?>" method="post">
             {{ csrf_field() }}
 
 
@@ -55,7 +55,6 @@
         <p style="font-family:Yekan;padding-right:30px;padding-top:20px;padding-bottom:10px;">نمایش زبان های برنامه نویسی</p>
 
         <div style="width:95%;height:3px;background:#48adff;margin:auto;margin-bottom:30px;"></div>
-
 
 
         <?php

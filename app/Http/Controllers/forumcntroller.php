@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\TopicModel;
 use App\Http\Requests;
+use App\AnsewerModel;
 
 class forumcntroller extends Controller
 {
@@ -15,7 +16,8 @@ class forumcntroller extends Controller
      */
     public function index()
     {
-        return view('forum.forum');
+        $topic=TopicModel::where('state','1')->orderBy('id','desc')->get();
+        return view('forum.forum',['topic'=>$topic]);
     }
 
     /**
@@ -36,7 +38,30 @@ class forumcntroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comment=new AnsewerModel($request->all());
+        $comment->id_users=1;
+        $comment->id_replay=0;
+        $comment->state=0;
+        $comment->date=time();
+        $comment->emtyaz=0;
+
+        if($request->hasfile('file'))
+        {
+            $FileName=time().'.'.$request->file('file')->getClientOriginalExtension();
+
+            if($request->file('file')->move('resources/upload/file',$FileName))
+            {
+                $comment->file=$FileName;
+            }
+
+        }
+
+        if( $comment->save() )
+        {
+            return redirect('/showpost/'.$request->url);
+        }
+
+        return redirect('/showpost/'.$request->url);
     }
 
     /**

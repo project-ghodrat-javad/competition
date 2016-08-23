@@ -11,40 +11,24 @@
 |
 */
 
-Route::get('/','Competitions@index');
 
+
+Route::get('/home', 'HomeController@competition');
+Route::get('/','HomeController@competition');
+Route::get('/competitions','HomeController@competition');
+Route::get('/details/{url}','HomeController@details');
+Route::get('/details/{url}/data','HomeController@data');
+Route::get('/prize/{url}','HomeController@prize');
+Route::get('/rules/{url}','HomeController@rules');
+Route::resource('/forum','forumcntroller');
+Route::get('/newtopic','HomeController@newtopic');
+Route::get('/showpost/{url}','HomeController@post');
 Route::auth();
 
-Route::get('/home', 'Competitions@index');
-Route::get('Admin', 'HomeController@admin');
-Route::get('User', 'UserController@index');
-Route::get('test','Competitions@test');
 
-Route::get('Competitions', 'Competitions@index');
-Route::get('ComDetails' , 'ComDetails@index');
-Route::get('Timeline' , 'Timeline@index');
-Route::get('Rules' , 'Rules@index');
-Route::get('Prizes' , 'Prizes@index');
-Route::get('Data' , 'Data@index');
-Route::get('team' , 'teamcontroller@index');
-Route::get('Evaluation' , 'Evaluation@index');
-
-//Route::get('Profile', 'Profile@index');
-Route::get('Result_user' , 'Result_user@index');
-Route::get('Script_user' , 'Script_user@index');
-Route::get('Forum_user' , 'Forum_user@index');
-Route::get('Acaunt_user' , 'Acaunt_user@index');
-Route::get('Pro_user' , 'Pro_user@index');
-
-
-Route::resource('/language','LanguageController');
-
-Route::get('script' , 'scriptcntroller@index');
-
-
-Route::get('forum' , 'forumcntroller@index');
-Route::get('hst' , 'Hostcntroller@index');
-
-
-
-
+Route::get('/admin','adminController@index');
+Route::resource('/admin/language','LanguageController');
+Route::resource('/admin/mosabeghe','mosabegheController');
+Route::resource('/admin/mosabegheoff','mosabegheControlleroff');
+Route::resource('/admin/prize','Prizes');
+Route::post('/admin/add/file','mosabegheController@addfile');

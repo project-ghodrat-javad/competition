@@ -1,15 +1,10 @@
 
 <html>
-<<<<<<< HEAD
-<head>
 
-=======
-
-
-<head>
+<head> 
 
     {{--<link rel="stylesheet" href="css/font-awesome.min.css">--}}
->>>>>>> origin/master
+
     <link rel="stylesheet" href="fonts/css/font-style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>مسابقات داده</title>
@@ -17,7 +12,7 @@
     <link rel="stylesheet" href="css/base.less" type="text/css">
     <link rel="stylesheet" href="css/kaggle-site.less" type="text/css">
     <link rel="stylesheet" href="css/style.css" id="intercom-styles" type="text/css">
-<<<<<<< HEAD
+
     <script src="js/ga.js" async="" type="text/javascript"></script>
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.9.2.min.js"></script>
@@ -48,7 +43,7 @@
                     {{--var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/koj6gxx6';--}}
                     {{--var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}--}}
                 {{--else{w.addEventListener('load',l,false);}}})()</script>--}}
-=======
+
     <script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript"></script><script src="js/ga.js" async="" type="text/javascript"></script><script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript"></script><script src="js/ga.js" async="" type="text/javascript"></script><script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript">
     </script><script src="js/ga.js" async="" type="text/javascript">
     </script><script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
@@ -78,7 +73,7 @@
                     var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/koj6gxx6';
                     var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}
                 else{w.addEventListener('load',l,false);}}})()</script>
->>>>>>> origin/master
+
 
 </head>
 

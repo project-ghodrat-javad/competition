@@ -15,7 +15,7 @@ class Competitions extends Controller
      */
     public function index()
     {
-        return view('Competitions');
+        
     }
 
     public function test()

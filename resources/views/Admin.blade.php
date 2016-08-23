@@ -3,22 +3,22 @@
 <head>
     <meta charset="utf-8">
     <title>Untitled Document</title>
-    <link type="text/css" rel="stylesheet" href="admin/css/style.css">
-    <script type="text/javascript" src="admin/js/jquery.min.js"></script>
-    <script type="text/javascript" src="admin/js/jquery.flot.js"></script>
-    <script type="text/javascript" src="admin/js/doc.js"></script>
+    <link type="text/css" rel="stylesheet" href="<?= asset('resources/admin/css/style.css'); ?>">
+    <script type="text/javascript" src="<?= asset('resources/admin/js/jquery.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?= asset('resources/admin/js/jquery.flot.js'); ?>"></script>
+    <script type="text/javascript" src="<?= asset('resources/admin/js/doc.js'); ?>"></script>
 
 
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/base.less" type="text/css">
-    <link rel="stylesheet" href="css/kaggle-site.less" type="text/css">
-    <link rel="stylesheet" href="css/style.css" id="intercom-styles" type="text/css">
-    <script src="js/ga.js" async="" type="text/javascript"></script>
-    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui-1.9.2.min.js"></script>
-    <script type="text/javascript" src="js/kaggle.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<?= asset('resources/css/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" href="<?= asset('resources/css/base.less'); ?>" type="text/css">
+    <link rel="stylesheet" href="<?= asset('resources/css/kaggle-site.less'); ?>" type="text/css">
+    <link rel="stylesheet" href="<?= asset('resources/css/style.css'); ?>" id="intercom-styles" type="text/css">
+    <script src="<?= asset('resources/js/ga.js'); ?>" async="" type="text/javascript"></script>
+    <script type="text/javascript" src="<?= asset('resources/js/jquery-1.7.2.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?= asset('resources/js/jquery-ui-1.9.2.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?= asset('resources/js/kaggle.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?= asset('resources/js/bootstrap.min.js'); ?>"></script>
 </head>
 <body>
 
@@ -33,13 +33,13 @@
         <ul>
             <li class="active">
                 <div class="fix">
-                    <span class="ico"><img src="admin/image/ico1.png"></span>
+                    <span class="ico"><img src="<?= asset('resources/admin/image/ico1.png'); ?>"></span>
                     <span class="value">مدیریت</span>
                 </div>
             </li>
             <li>
                 <div class="fix">
-                    <span class="ico"><img src="admin/image/ico3.png"></span>
+                    <span class="ico"><img src="<?= asset('resources/admin/image/ico3.png'); ?>"></span>
                     <span class="value"> پروفایل مدیریت</span>
                 </div>
                 <ul>
@@ -50,7 +50,7 @@
             </li>
             <li>
                 <div class="fix">
-                    <span class="ico"><img src="admin/image/ico2.png"></span>
+                    <span class="ico"><img src="<?= asset('resources/admin/image/ico2.png'); ?>"></span>
                     <span class="value">بخش کاربران</span>
                 </div>
                 <ul>
@@ -62,7 +62,7 @@
 
             <li>
                 <div class="fix">
-                    <span class="ico"><img src="admin/image/ico5.png"></span>
+                    <span class="ico"><img src="<?= asset('resources/admin/image/ico5.png'); ?>"></span>
                     <span class="value">پیام ها</span>
                 </div>
                 <ul>
@@ -73,13 +73,13 @@
             </li>
             <li>
                 <div class="fix">
-                    <span class="ico"><img src="admin/image/ico6.png"></span>
+                    <span class="ico"><img src="<?= asset('resources/admin/image/ico6.png'); ?>"></span>
                     <span class="value"> مسابقات</span>
                 </div>
                 <ul>
-                    <li><a href="/"> ثبت مسابقه </a></li>
-                    <li><a href="/">     نمایش همه مسابقات </a></li>
-                    <li><a href="/">   نمایش مسابقات فعال </a></li>
+                    <li><a href="<?= Url('/admin/mosabeghe/create') ?>"> ثبت مسابقه </a></li>
+                    <li><a href="<?= Url('/admin/mosabegheoff') ?>">     نمایش مسابقات غیرفعال</a></li>
+                    <li><a href="<?= Url('/admin/mosabeghe') ?>">   نمایش مسابقات فعال </a></li>
 
                 </ul>
             </li>
@@ -88,11 +88,11 @@
 
             <li>
                 <div class="fix">
-                    <span class="ico"><img src="admin/image/ico6.png"></span>
+                    <span class="ico"><img src="<?= asset('resources/admin/image/ico6.png'); ?>"></span>
                     <span class="value"> مدیریت زبان های برنامه نویسی</span>
                 </div>
                 <ul>
-                    <li><a href="">ثبت زبان </a></li>
+                    <li><a href="<?= Url('admin/language') ?>">ثبت زبان </a></li>
 
                 </ul>
             </li>
@@ -101,7 +101,7 @@
 
             <li>
                 <div class="fix">
-                    <span class="ico"><img src="admin/image/lock.png"></span>
+                    <span class="ico"><img src="<?= asset('resources/admin/image/lock.png'); ?>"></span>
                     <span class="value"> خروج</span>
                 </div>
 

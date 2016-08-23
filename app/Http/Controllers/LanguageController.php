@@ -48,7 +48,7 @@ class LanguageController extends Controller
 
         $model->save();
 
-        return redirect('/language');
+        return redirect('admin/language');
     }
 
     /**
@@ -94,6 +94,6 @@ class LanguageController extends Controller
     public function destroy($id)
     {
         $Category=LanguageModel::where('id_langs',$id)->delete();
-        return redirect('/language');
+        return redirect('admin/language');
     }
 }

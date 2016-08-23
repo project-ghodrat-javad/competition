@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\LanguageRequest;
+use App\DataModel;
 
 class Data extends Controller
 {
@@ -13,9 +15,16 @@ class Data extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($page=1)
     {
-        return view('Data');
+        if($page==0)
+        {
+            return redirect('/');
+        }
+        $model=DataModel::orderby('id_data','desc')->get();
+        $total=DataModel::count();
+        return view('Data',['model'=>$model,'page'=>$page,'total'=>$total]);
+//        return view('Data');
     }
 
     /**
@@ -34,9 +43,13 @@ class Data extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LanguageRequest $request)
     {
-        //
+        $model = new DataModel($request->all());
+
+        $model->save();
+
+        return redirect('/data');
     }
 
     /**

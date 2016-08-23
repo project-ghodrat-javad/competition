@@ -42,6 +42,16 @@ class GridView
                   echo '<td>'.$Jdf->jdate('Y/n/j-H:i:s',$model->$array2[$i]).'</td>'; 
                 }
 
+                elseif ($array2[$i]=='date_st') {
+
+                  echo '<td>'.$Jdf->jdate('Y/n/j-H:i:s',$model->$array2[$i]).'</td>'; 
+                }
+
+                elseif ($array2[$i]=='date_finish')
+                {
+                  echo '<td>'.$Jdf->jdate('Y/n/j-H:i:s',$model->$array2[$i]).'</td>'; 
+                }
+
                 else
                 {
                   echo '<td>'.$model->$array2[$i].'</td>'; 
@@ -52,10 +62,10 @@ class GridView
           }
           echo '<td>';
 
-          $route= asset($ntable.'/'.$model['id_langs']);
+          $route= asset('/admin/'.$ntable.'/'.$model['id_langs']);
           // url().'/admin/'.$model['table'].'/'.$model->id;
           ?>
-          <img src="images/15.gif" onclick="del_row('<?= $route ?>')" />
+          <img src="<?= asset('resources/images/15.gif'); ?>" onclick="del_row('<?= $route ?>')" />
 
             
           </td>

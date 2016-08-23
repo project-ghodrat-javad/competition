@@ -2,46 +2,18 @@
 <html>
 <head>
 
-    <link rel="stylesheet" href="fonts/css/font-style.css">
+    <link rel="stylesheet" href="<?= asset('resources/fonts/css/font-style.css'); ?>">
     <title>مسابقات پردازش داده - بیگ دیتا</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/base.less" type="text/css">
-    <link rel="stylesheet" href="css/kaggle-site.less" type="text/css">
-    <link rel="stylesheet" href="css/style.css" id="intercom-styles" type="text/css">
-    {{--<script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript"></script>--}}
-    <script src="js/ga.js" async="" type="text/javascript"></script>
-    {{--<script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript"></script>--}}
-    {{--<script src="js/ga.js" async="" type="text/javascript"></script>--}}
-    {{--<script src="https://widget.intercom.io/widget/koj6gxx6" async="" type="text/javascript"></script>--}}
-    {{--<script src="js/ga.js" async="" type="text/javascript"></script>--}}
-    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui-1.9.2.min.js"></script>
-    <script type="text/javascript" src="js/kaggle.min.js"></script>
-    {{--<script type="text/javascript">--}}
-        {{--Kaggle.Current.siteId = 1;--}}
-        {{--Kaggle.Current.userId = 598228;--}}
-    {{--</script>--}}
-    <!--[if (gte IE 6)&(lte IE 8)]>
-    <!--<script type="text/javascript" src="/content/v/f1f17fea7cee/shared/js/ie/selectivizr.min.js"></script>-->
-    <![endif]-->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    {{--<link rel="apple-touch-icon" href="img/apple-touch-icon.png">--}}
-    <!--[if lt IE 9]>
-    <!--<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
-    <![endif]-->
-    {{--<script>--}}
-        {{--window.intercomSettings = {--}}
-            {{--app_id: "koj6gxx6"--}}
-        {{--};--}}
-    {{--</script>--}}
-    {{--<script>(function(){var w=window;var ic=w.Intercom;--}}
-	{{--if(typeof ic==="function"){ic('reattach_activator');--}}
-	{{--ic('update',intercomSettings);}else{var d=document;--}}
-	{{--var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){--}}
-	{{--var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/koj6gxx6';--}}
-	{{--var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}--}}
-	{{--else{w.addEventListener('load',l,false);}}})()</script>--}}
-
+    <link rel="stylesheet" href="<?= asset('resources/css/base.less'); ?>" type="text/css">
+    <link rel="stylesheet" href="<?= asset('resources/css/kaggle-site.less'); ?>" type="text/css">
+    <link rel="stylesheet" href="<?= asset('resources/css/style.css'); ?>" id="intercom-styles" type="text/css">
+    <script src="<?= asset('resources/js/ga.js'); ?>" async="" type="text/javascript"></script>
+    <script type="text/javascript" src="<?= asset('resources/js/jquery-1.7.2.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?= asset('resources/js/jquery-ui-1.9.2.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?= asset('resources/js/kaggle.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?= asset('resources/js/bootstrap.min.js'); ?>"></script>
+    
 </head>
 
 <body class="logged-in    kaggle">
@@ -103,7 +75,7 @@
 
                 });
             </script>
-            <a id="logo" href="/"><img alt="Kaggle" src="images/site-logo.png" height="86" width="240"></a>
+            <a id="logo" href="/"><img alt="Kaggle" src="<?= asset('resources/images/site-logo.png'); ?>" height="86" width="240"></a>
         </div>
     </div>
     <!-- End header-inside and header -->
@@ -117,13 +89,13 @@
             }
         </style>-->
         <!--<div id="" style="width:15%;float:left"></div>-->
-        <div id="logobig" style="width:85%;float:right"><img src="images/bigdata.png"></div>
+        <div id="logobig" style="width:85%;float:right"><img src="<?= asset('resources/images/bigdata.png'); ?>"></div>
     </div>
 
 
 	<!-- start mosabeghe -->
 	
-    e<div id="competitions" class="content">
+    <div id="competitions" class="content">
 	        <!-- start dashbord left -->
         <div id="competitions-page-sidebar">
             <ul id="view-switch" style="text-align: right; margin: 10px;" id="view-switch">
@@ -160,28 +132,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <!--<div class="filter" style="display: none">
-                            <h3>نوع</h3>
-                            <ul>
-                                <li>
-                                    <input name="ShowProspect" id="prospect" value="true" checked="checked" type="checkbox">
-                                    <label class="prospect checked" for="prospect">چشم انداز</label>
-                                </li>
-                                <li>
-                                    <input name="ShowOpenToAll" id="open" value="true" checked="checked" type="checkbox">
-                                    <label class="open checked" for="open">بازکردن همه</label>
-                                </li>
-                                <li>
-                                    <input name="ShowPrivate" id="private" value="true" checked="checked" type="checkbox">
-                                    <label class="private checked" for="private">خصوصی</label>
-                                </li>
-                                <li>
-                                    <input name="ShowLimited" id="limited" value="true" checked="checked" type="checkbox">
-                                    <label class="limited checked" for="limited">محدود</label>
-                                </li>
-                            </ul>
-                        </div>-->
-
+                        
                         <div class="filter">
                             <h3>حامی</h3>
                             <ul>
@@ -211,63 +162,17 @@
                     </header>
                     <div class="front-current-container" id="recruitment-container">
                         <ul class="front-current multiple" id="recruitment">
-                            <li>
-								
-								<div class="front-comp-details">
-									
+                            
 
-									<!-- Day   prize   teams  -->
-                                    <div class="comp-stats-column-scripts">
-                                        <div class="stats stats-ending">
-                                            <strong>48 روز</strong>
-                                        </div>
-                                        <div class="stats stats-teams">
-                                            <strong>330</strong>
-                                            تیم       </div>
-                                        <div class="stats stats-scripts">
-                                            <strong>702</strong>
-                                            اسکریپت
-                                        </div>
-                                        <div class="stats stats-prize">
-                                            <strong>جایزه</strong>
-                                        </div>
-                                    </div>
-									<!--table title -->
-                                    <div class="comp-desc-column" style="width: 60%; float: left;">
-                                        <h3>
-                                            <a class="comp-link" href="/ComDetails">عنوان</a>
-                                        </h3>
-                                        <div class="job-desc">
-                                            <div class="job-title">
-                                                سوال
-                                            </div>
-                                          <!--  <div class="job-employer">Facebook</div>
-                                            <div class="job-location">Menlo Park, CA or Seattle, WA</div>-->
-                                        </div>
-                                    </div>
-									<img class="front-current-image" src="images/thumb76_76.png" alt="Facebook V: Predicting Check Ins" title="Facebook V: Predicting Check Ins" height="76" width="76">
+                        @yield('content')
 
-                                </div>
-								<!-- img  -->
-								<div class="My" style="background:red;">
-                                </div>
-								
-                            </li>
+
+
                         </ul>
-                        <!--<div class="tooltip">
-                            <div class="tooltip-text">recruitment</div>
-                        </div>-->
                     </div>
                 </li>
-				<!--
-                <script type="text/javascript">
-                    $(function() {
-                        $('.front-current-container .tooltip').mousemove(function(e) {
-                            $(this).find('.tooltip-text').css('top', e.offsetY-15);
-                        });
-                    });
-                </script>-->
             </div>
+			
             <div id="competitions-all" style="display: none;">
                 <table id="competitions-table">
                     <colgroup>
@@ -279,45 +184,32 @@
                     <thead>
                     <tr>
                         <th class="not-sorted">
-                            <a href="/competitions/search?CompetitionNameColumnSort=Ascending" title="Sort by Competition Name"> نام مسابقه <img alt="Sort" src="images/sort-not-sorted.png">  </a>
+                            <a href="/competitions/search?CompetitionNameColumnSort=Ascending" title="Sort by Competition Name"> نام مسابقه <img alt="Sort" src="<?= asset('resources/images/sort-not-sorted.png'); ?>">  </a>
                         </th>
                         <th class="sorted descending">
-                            <a href="/competitions/search?RewardColumnSort=Ascending" title="Current sorting by Reward descending. Click to reverse."> جایزه <img alt="Sort" src="images/sort-descending.png">  &nbsp;<!-- extra space to center text --></a>
+                            <a href="/competitions/search?RewardColumnSort=Ascending" title="Current sorting by Reward descending. Click to reverse."> جایزه <img alt="Sort" src="<?= asset('resources/fonts/css/font-style.css'); ?>images/sort-descending.png">  &nbsp;<!-- extra space to center text --></a>
                             <input id="current-sort-column-name" value="RewardColumnSort" type="hidden">
                             <input id="current-sort-direction" value="Descending" type="hidden">
                         </th>
 
                         <th class="not-sorted">
-                            <a href="/competitions/search?TeamsColumnSort=Descending" title="Sort by Teams"> تیم ها <img alt="Sort" src="images/sort-not-sorted.png">  &nbsp;<!-- extra space to center text --></a>
+                            <a href="/competitions/search?TeamsColumnSort=Descending" title="Sort by Teams"> تیم ها <img alt="Sort" src="<?= asset('resources/images/sort-not-sorted.png'); ?>">  &nbsp;<!-- extra space to center text --></a>
                         </th>
                         <th class="not-sorted">
-                            <a href="/competitions/search?DeadlineColumnSort=Descending" title="Sort by Deadline"> آخرین فرصت <img alt="Sort" src="images/sort-not-sorted.png">  &nbsp;<!-- extra space to center text --></a>
+                            <a href="/competitions/search?DeadlineColumnSort=Descending" title="Sort by Deadline"> آخرین فرصت <img alt="Sort" src="<?= asset('resources/images/sort-not-sorted.png'); ?>">  &nbsp;<!-- extra space to center text --></a>
                         </th>
                     </tr></thead>
 
                     <tbody>
-                    <tr class="active-comp">
-                        <td style="border-left: 1px solid rgb(224, 224, 224);">
-                            
-                            <div class="competition-details">
-                                <div class="competitions-types"></div>
-                                <a href="/ComDetails"><h4>عنوان</h4></a>
-                                <p class="competition-summary">
-                                    <a href="/c/state-farm-distracted-driver-detection">سوال</a>
-                                </p>
-                            </div>
-							<a href="/c/state-farm-distracted-driver-detection">
-							<img class="competition-image" src="images/thumb76_76.png" alt="state-farm-distracted-driver-detection Image" height="76" width="76"></a>
-                        </td>
-                        <td>200 هزار</td>
-                        <td>1</td>
-                        <td>1 ماه</td>
-                    </tr>
+
+
+
+                    @yield('content2')
+
+
+
                     </tbody>
                 </table>
-                <!--<div id="page-number" class="page-number">
-                    نمایش <strong>1?13</strong> از <span id="total-comps-found">13</span> مسابقات یافت شده (<span id="active-comps-found">13</span> فعال)
-                </div>-->
             </div>
         </div>
     </div>
@@ -415,23 +307,12 @@
 
 </div>
         <!-- end koll  -->
+		
+	
 
 <!--  start footer -->							 
 <div id="footer">
     <div id="footer-inside">
-        <!--<div id="footer-social">
-            <div id="social-links">
-                <a class="twitter" href="http://www.twitter.com/kaggle" title="Follow Kaggle on Twitter"></a>
-                <a class="facebook" href="http://www.facebook.com/kaggle" title="Follow Kaggle on Facebook"></a>
-                <a class="linkedin" href="http://www.linkedin.com/companies/kaggle" title="Follow Kaggle on LinkedIn"></a>
-            </div>
-        </div>-->
-       <!-- <div id="footer-copyright">
-
-
-
-            ? 2016 bigdata Inc
-        </div>	-->
         <div id="footer-links">
             <a href="/team">درباره ما</a>
             <a href="/careers">سایت بیگ دیتا</a>
@@ -442,21 +323,6 @@
     </div> 
 </div>
  <!--end footer-->
-
-
-{{--<script type="text/javascript">--}}
-    {{--var _gaq = _gaq || [];--}}
-    {{--_gaq.push(['_setAccount', 'UA-12629138-1']);--}}
-    {{--_gaq.push(['_trackPageview']);--}}
-    {{--_gaq.push(['_trackPageLoadTime']);--}}
-    {{--_gaq.push(['_setCustomVar', 1, 'usertype', 'registered', 2]);--}}
-    {{--_gaq.push(['_setCustomVar', 2, 'userid', '598228', 2]);--}}
-    {{--(function () {--}}
-        {{--var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;--}}
-        {{--ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';--}}
-        {{--var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);--}}
-    {{--})();--}}
-{{--</script>--}}
 <script type="text/javascript">
     /**
      * Function that tracks a click on an outbound link in Google Analytics.
@@ -472,28 +338,6 @@
         });
     }
 </script>
-
-<!--
-<iframe style="display: none;"></iframe>
-<div class="intercom-container intercom-reset intercom-learn" id="intercom-container">
-
-
-
-    <div style="display: block;" class="intercom-launcher intercom-launcher-active" id="intercom-launcher">
-        <div class="intercom-launcher-button">
-            <div class="intercom-launcher-initials"></div>
-        </div>
-        <div class="intercom-launcher-badge">
-        </div>
-        <div class="intercom-launcher-preview">
-            <div class="intercom-launcher-preview-body"></div>
-            <div class="intercom-launcher-preview-caret"></div>
-            <div class="intercom-launcher-preview-close"></div>
-        </div>
-    </div>
-    <div class="intercom-messenger intercom-messenger-inactive" id="intercom-messenger"></div>
-</div> -->
-
 </body>
 
 </html>
