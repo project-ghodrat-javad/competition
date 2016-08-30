@@ -15,6 +15,5 @@ $GridView=GridView2::view($array1,$array2,$model,$page,$total,$ntable='mosabeghe
 
 ?>
 
-{!! $model->render() !!}
-
+ 
 @endsection

@@ -5,9 +5,31 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\PrizeModel;
 use App\Http\Requests;
+use Auth;
 
 class Prizes extends Controller
 {
+
+    public function __construct()
+    {
+
+        if ( Auth::check() )
+        {
+            $roule = Auth::user()->roule;
+
+            if( $roule != '1' ){
+                return redirect('/users/panel')->send();   
+            }
+        }
+        else{
+
+            return redirect('login')->send();
+
+        }
+          // $this->middleware('auth'); 
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -72,7 +94,20 @@ class Prizes extends Controller
 
         $Post=PrizeModel::find($id);
         $Post->id_masale=$request->id_mo;
-        if($Post->update($request->all()))
+
+        if( $request->know2 == 'on' )
+        {
+            $Post->first='0';
+            $Post->two='0';
+            $Post->three='0';
+        }
+        else{
+            $Post->first=$request->first;
+            $Post->two=$request->two;
+            $Post->three=$request->three;
+        }
+
+        if($Post->update())
         {
             return redirect('/admin/mosabeghe/'.$request->id_mo.'/edit');
         }

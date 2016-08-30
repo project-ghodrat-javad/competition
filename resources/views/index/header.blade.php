@@ -54,68 +54,6 @@
 
 
 
-                    <div class="_panel" id="competition-dashboard" style="float: right">
-                        <header>
-                            <h1>داشبورد</h1>
-                            <div id="triangle">&#9660;</div>
-                        </header>
-                        <ul id="competition-dashboard-dropdown">
-                            <li class="cd-home">
-                                <a href="/c/integer-sequence-learning">Home</a>
-                                <ul>
-                                    <li class="cd-data"><a href="/c/integer-sequence-learning/data">Data</a></li>
-
-                                    <li class="cd-submit submission-link">
-                                        <a class="comp-link" href="/c/integer-sequence-learning/submit">Make a submission</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="cd-info">
-                                <a id="open-info">Information</a>
-                                <ul id="pages-flyout">
-                                    <li>
-                                        <a href="/c/integer-sequence-learning">Description</a>                    </li>
-                                    <li>
-                                        <a href="/c/integer-sequence-learning/details/evaluation">Evaluation</a>                    </li>
-                                    <li>
-                                        <a href="/c/integer-sequence-learning/rules">Rules</a>                    </li>
-
-                                </ul>
-                            </li>
-
-                            <li class="cd-forum"><a href="/c/integer-sequence-learning/forums">Forum</a></li>
-
-                            <li class="cd-scripts">
-                                <a class="comp-link" href="/c/integer-sequence-learning/scripts">Scripts</a>
-                                <ul class="flyout">
-                                    <li><a href="/c/integer-sequence-learning/scripts/new">New Script</a></li>
-                                    <li><a href="/c/integer-sequence-learning/scripts/notebook">New Notebook</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="cd-leaderboard">
-                                <a href="/c/integer-sequence-learning/leaderboard">Leaderboard</a>
-                            </li>
-
-
-                            <li class="cd-team">
-                                <a href="/c/integer-sequence-learning/team">My Team</a>
-                            </li>
-                            <li class="cd-submissions"><a href="/c/integer-sequence-learning/submissions">My Submissions</a></li>
-
-
-                        </ul>
-                    </div>
-
-
-                    <div id="comp-dash-header-title">
-                        <h1>
-                            <a href="/c/integer-sequence-learning/forums" style="margin-right: 20px">تالار گفتگوی مسابقات</a>
-
-
-                        </h1>
-                    </div>
                 </div>
                 <div class="forum-page comp-content full-width">
                     <div class="comp-content-inside">

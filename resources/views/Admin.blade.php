@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="<?= asset('resources/css/kaggle-site.less'); ?>" type="text/css">
     <link rel="stylesheet" href="<?= asset('resources/css/style.css'); ?>" id="intercom-styles" type="text/css">
     <script src="<?= asset('resources/js/ga.js'); ?>" async="" type="text/javascript"></script>
-    <script type="text/javascript" src="<?= asset('resources/js/jquery-1.7.2.min.js'); ?>"></script>
-    <script type="text/javascript" src="<?= asset('resources/js/jquery-ui-1.9.2.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?= asset('resources/js/jquery-resources.7.2.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?= asset('resources/js/jquery-ui-resources.9.2.min.js'); ?>"></script>
     <script type="text/javascript" src="<?= asset('resources/js/kaggle.min.js'); ?>"></script>
     <script type="text/javascript" src="<?= asset('resources/js/bootstrap.min.js'); ?>"></script>
 </head>
@@ -33,7 +33,7 @@
         <ul>
             <li class="active">
                 <div class="fix">
-                    <span class="ico"><img src="<?= asset('resources/admin/image/ico1.png'); ?>"></span>
+                    <span class="ico"><img src="<?= asset('resources/admin/image/icoresources.png'); ?>"></span>
                     <span class="value">مدیریت</span>
                 </div>
             </li>
@@ -43,9 +43,15 @@
                     <span class="value"> پروفایل مدیریت</span>
                 </div>
                 <ul>
-                    <li><a href="/">ویرایش اطلاعات</a></li>
-                    <li><a href="/">تعریف مدیر جدید</a></li>
 
+                    <?php
+                        use App\Http\Controllers\Auth\AuthController;
+                        $id_user=Auth::user()->id;
+                    ?>
+
+                    <li><a href="<?= Url('admin/users/'.$id_user.'/edit'); ?>">ویرایش اطلاعات</a></li>
+                    
+                    <li><a href="<?= Url('logout'); ?>"> خروج </a></li>
                 </ul>
             </li>
             <li>
@@ -54,9 +60,9 @@
                     <span class="value">بخش کاربران</span>
                 </div>
                 <ul>
-                    <li><a href="/">ایجاد کاربر جدید </a></li>
-                    <li><a href="/">  نمایش کاربران</a></li>
-                    <li><a href="/">لیست مدیران</a></li>
+                    <li><a href="<?= Url('admin/users/create'); ?>">ایجاد کاربر جدید </a></li>
+                    <li><a href="<?= Url('admin/users'); ?>">  نمایش کاربران</a></li>
+                    <li><a href="<?= Url('admin/users/admin'); ?>">لیست مدیران</a></li>
                 </ul>
             </li>
 
@@ -76,14 +82,30 @@
                     <span class="ico"><img src="<?= asset('resources/admin/image/ico6.png'); ?>"></span>
                     <span class="value"> مسابقات</span>
                 </div>
-                <ul>
+                <ul> 
                     <li><a href="<?= Url('/admin/mosabeghe/create') ?>"> ثبت مسابقه </a></li>
                     <li><a href="<?= Url('/admin/mosabegheoff') ?>">     نمایش مسابقات غیرفعال</a></li>
                     <li><a href="<?= Url('/admin/mosabeghe') ?>">   نمایش مسابقات فعال </a></li>
+                    <li><a href="<?= Url('/admin/mosabeghe/nook') ?>">   نمایش مسابقات تایید نشده </a></li>
 
                 </ul>
             </li>
 
+
+
+            <li>
+                <div class="fix">
+                    <span class="ico"><img src="<?= asset('resources/admin/image/ico5.png'); ?>"></span>
+                    <span class="value"> تالار گفت و گو </span>
+                </div>
+                <ul>
+                    <li><a href="<?= Url('admin/forum/topic/create') ?>"> ایجاد موضوع جدید </a></li>
+                    <li><a href="<?= Url('admin/forum/topic') ?>"> نمایش موضوعات تالار </a></li>
+                    <li><a href="<?= Url('admin/forum/topic/active') ?>"> نمایش موضوعات فعال </a></li>
+                    <li><a href="<?= Url('admin/forum/topic/unactive') ?>"> نمایش موضوعات تایید نشده </a></li>
+
+                </ul>
+            </li>
 
 
             <li>
@@ -95,16 +117,6 @@
                     <li><a href="<?= Url('admin/language') ?>">ثبت زبان </a></li>
 
                 </ul>
-            </li>
-
-
-
-            <li>
-                <div class="fix">
-                    <span class="ico"><img src="<?= asset('resources/admin/image/lock.png'); ?>"></span>
-                    <span class="value"> خروج</span>
-                </div>
-
             </li>
 
         </ul>

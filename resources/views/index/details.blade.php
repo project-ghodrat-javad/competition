@@ -2,8 +2,8 @@
 
 
 @section('content')
-
-
+ 
+ 
         @include('index.sidbar')
 
         <div class="description comp-content with-sidebar _panel">
@@ -18,7 +18,7 @@
                 <h1 style="color: #6f7175">{{ $mosabeghe->question }}</h1>
 
 
-                <img src="<?= asset('resources/upload/image/'.$mosabeghe->img); ?>" width="632" alt="<?= $mosabeghe->title ?>" title="<?= $mosabeghe->title ?>" /> 
+                <img src="<?= asset('resources/upload/image/'.$mosabeghe->img); ?>" width="632" height="300 alt="<?= $mosabeghe->title ?>" title="<?= $mosabeghe->title ?>" /> 
                 <span style="margin-top:20px;"></span>
                 {!! $mosabeghe->details !!}
 

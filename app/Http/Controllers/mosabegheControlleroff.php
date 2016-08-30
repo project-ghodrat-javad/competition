@@ -10,6 +10,27 @@ use App\Http\Requests;
 
 class mosabegheControlleroff extends Controller
 {
+
+    public function __construct()
+    {
+
+        if ( Auth::check() )
+        {
+            $roule = Auth::user()->roule;
+
+            if( $roule != '1' ){
+                return redirect('/users/panel')->send();   
+            }
+        }
+        else{
+
+            return redirect('login')->send();
+
+        }
+          // $this->middleware('auth'); 
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -21,8 +42,23 @@ class mosabegheControlleroff extends Controller
         {
           return redirect('admin/mosabegheoff');
         }
+
+        $activ=MosabegheModel::where('state',1)->orderBy('id','desc')->get();
+        $array2=array(); 
+        $j=0; 
+        foreach ($activ as $activ) 
+        {
+            $date='+'.$activ->date_finish.' day';
+            $created=strtotime($date, $activ->date_st);
+            $datenow=time();
+            if ( $created <= $datenow ) {
+                $array2[$j]=$activ->id;
+                $j++;
+            }
+        }
+
         $skip=($page-1)*10;
-        $model=MosabegheModel::where('state',0)->orderby('id','desc')->paginate('10');
+        $model=MosabegheModel::find($array2);
         $total=MosabegheModel::count();
         return View('admin.mosabeghaoff.index',['model'=>$model,'page'=>$page,'total'=>$total]);
 

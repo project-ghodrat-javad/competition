@@ -25,17 +25,17 @@
             <table id="data-files" style="text-align:rtl;direction:rtl;" class="nicetable full roomy align-top border">   
                 <thead>
                     <tr>
-                        <th>جایزه نفر اول </th> 
-                        <th>جایزه نفر دوم</th> 
-                        <th>جایزه نفر سوم</th>         
+                        <th id="cnt">جایزه نفر اول </th> 
+                        <th id="cnt">جایزه نفر دوم</th> 
+                        <th id="cnt">جایزه نفر سوم</th>         
                     </tr> 
                 </thead>
 
                 <tbody>
                     <tr>
-                        <td>{{ $prize->first }}</td>
-                        <td>{{ $prize->two }}</td>
-                        <td>{{ $prize->three }}</td>
+                        <td id="cnt">{{ $prize->first }}</td>
+                        <td id="cnt">{{ $prize->two }}</td>
+                        <td id="cnt">{{ $prize->three }}</td>
                     </tr>
 
                 </tbody>

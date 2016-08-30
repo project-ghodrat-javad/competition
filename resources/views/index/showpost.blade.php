@@ -1,25 +1,13 @@
 <?php
     use App\lib\Jdf;
+    use App\Http\Controllers\Auth\AuthController;
 ?>
 
-@extends('layouts.heaer')
+@extends('layouts.Main')
 @section('content')
-    @include('index.header')
 
-
-
-
-
-    <div id="forum-search">
-                                <form method="get" action="https://www.google.com/search">
-                                    <input type="text" name="q" size="25" maxlength="255" value="" />
-                                    <input type="submit" value="جستجو" />
-                                    <input type="hidden"  name="sitesearch" value="www.kaggle.com/c/integer-sequence-learning/forums" />
-                                </form>
-                            </div>
-
-
-
+<?php $co=getComment($showpost->id);
+?>
 
 
 
@@ -35,21 +23,19 @@
 
 
 
-
-
-
-
-
-<?php $co=getComment($showpost->id);
-?>
 @foreach($co as $co) 
-<div class="post-outer">
-    <a title="permaanchor" class="permaanchor" name="post130521"></a>
+<div class="post-outer" style="direction:rtl;">
+    <a title="permaanchor" class="permaanchor" ></a>
     <table class="post ">
         <tr>
             <td class="postmeta-vote authenticated" rowspan="2">
                 <div>
-                    <div><img src="<?= asset('resources/images/icon-thumbs-up.ef2a83d6.png') ?>" /></div>
+                    <?php
+                        if ( Auth::check() )
+                        {
+                    ?>
+                    <a href="<?= Url('/showpost/'.$co->id.'/add'); ?>"><div><img src="<?= asset('resources/images/icon-thumbs-up.ef2a83d6.png') ?>"/></div></a>
+                    <?php } ?>
                     <label title="Votes">{{ $co->emtyaz }}</label>
                     <div class="votes-label">امتیاز نوشته</div>
                 </div>
@@ -69,13 +55,25 @@
                 <div class="postmeta-date">
                     <span><?php $Jdf=new Jdf();echo $Jdf->jdate('Y/n/j-H:i:s',$co->date); ?></span>
                 </div>
-                
+                <?php
+                    $userinfo=get_user($co->id_users); 
+                ?>
                 <div class="postmeta-user )">
                     <a class="avatar" href="/iglovikov" title="View Vladimir Iglovikov's profile">
-                        <img class="avatar-img" src="https://kaggle2.blob.core.windows.net/avatars/thumbnails/286455-fb.jpg" alt="Vladimir Iglovikov's image" />
-                    </a>
+                        <?php
+                            if ( $userinfo->img != '' ) {
+                                ?>
+                                    <img class="avatar-img" src="<?= asset('resources/upload/profile/'.$userinfo->img); ?>" alt="{{ $userinfo->name }}" />
+                                <?php
+                            }else{ ?> 
+                                <img class="avatar-img" src="<?= asset('resources/upload/profile/laravel-logo.png'); ?>" alt="{{ $userinfo->name }}" />
+                                <?php
+                            }
+                        ?>
+                    </a>   
+                    <!-- laravel-logo.png -->
                     <div class="usermeta">
-                        <a class="profilelink" href="/iglovikov" title="View Vladimir Iglovikov&#39;s profile">Vladimir Iglovikov</a>
+                        <a class="profilelink" href="/iglovikov" title="View Vladimir Iglovikov&#39;s profile"><?= $userinfo->name; ?></a>
                     </div>
                     
                 </div>
@@ -88,10 +86,11 @@
 
 
 
-
-
-
-<div style="margin-top:60px;">
+<?php
+    if ( Auth::check() )
+    {
+?>
+<div style="margin-top:60px;direction:rtl;">
 	{!! Form::open(['url'=>'/forum','files'=>true]) !!}
         <div>
             {!! Form::textarea('matn','',['class'=>'ckeditor']) !!}
@@ -111,6 +110,9 @@
         </div>
     {!! Form::close() !!}
 </div>
+<?php }else{ ?>
+        <a href="<?= Url('/login'); ?>" class="btn btn-success"> نظری ثبت نمایید </a>
+    <?php } ?>
 
 
 
@@ -124,6 +126,7 @@
 <?php
 
 	use App\AnsewerModel;
+    use App\User;
 
 	function getComment($id)
 	{
@@ -131,5 +134,11 @@
 		// AnsewerModel::where('id_topics',$id)->get();
 		return $comment;
 	}
+
+    function get_user($id)
+    {
+        $user=User::find($id);
+        return $user;
+    }
 
 ?>

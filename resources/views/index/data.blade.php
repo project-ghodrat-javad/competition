@@ -22,11 +22,11 @@
 
 
 
-            <table id="data-files" style="text-align:rtl;direction:rtl;" class="nicetable full roomy align-top border">   
+            <table id="data-files" style="direction:rtl;" class="nicetable full roomy align-top border">   
                 <thead>
                     <tr>
-                        <th colspan="2">عنوان فایل </th> 
-                        <th>لینک دانلود</th>         
+                        <th style="text-align:center" colspan="2">عنوان فایل </th> 
+                        <th style="text-align:center">لینک دانلود</th>         
                     </tr> 
                 </thead>
 
@@ -35,9 +35,9 @@
                 <tbody>
                     <tr>
 
-                        <td class="file-name" colspan="2" rowspan="1"> {{ $data->title }} </td>
+                        <td style="text-align:center" class="file-name" colspan="2" rowspan="1"> {{ $data->title }} </td>
                         <td>
-                        <a href="<?= asset('resources/upload/file/'.$data->file); ?>"> {{ $data->file }} </a></td>
+                        <a style="text-align:center" href="<?= asset('resources/upload/file/'.$data->file); ?>"> {{ $data->file }} </a></td>
                     </tr>
 
                 </tbody>

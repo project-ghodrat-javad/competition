@@ -4,14 +4,39 @@ namespace App\Http\Controllers;
 
 use App\MosabegheModel;
 use Illuminate\Http\Request;
-use Auth;
+use Auth; 
 use App\PrizeModel;
 use App\DataModel;
 use App\Http\Requests;
 use App\User;
+use App\LanguageModel;
+use App\ScriptModel;
+use App\MemberModel;
 
 class mosabegheController extends Controller
 {
+
+
+    public function __construct()
+    {
+
+        if ( Auth::check() )
+        {
+            $roule = Auth::user()->roule;
+
+            if( $roule != '1' ){
+                return redirect('/users/panel')->send();   
+            }
+        }
+        else{
+
+            return redirect('login')->send();
+
+        }
+          // $this->middleware('auth'); 
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -24,8 +49,23 @@ class mosabegheController extends Controller
         {
           return redirect('admin/mosabeghe');
         }
-        $skip=($page-1)*10;
-        $model=MosabegheModel::where('state',1)->orderby('id','desc')->paginate('10');
+
+        $activ=MosabegheModel::where('state',1)->orderBy('id','desc')->get();
+        $array2=array();  
+        $j=0;
+        foreach ($activ as $activ) 
+        {
+            $date='+'.$activ->date_finish.' day';
+            $created=strtotime($date, $activ->date_st);
+            $datenow=time();
+            if ( $created >= $datenow ) {
+                $array2[$j]=$activ->id;
+                $j++;
+            }
+        }
+
+        $skip=($page-1)*10; 
+        $model=MosabegheModel::find($array2);
         $total=MosabegheModel::count();
         return View('admin.mosabeghe.index',['model'=>$model,'page'=>$page,'total'=>$total]);
 
@@ -53,14 +93,13 @@ class mosabegheController extends Controller
         $title=str_replace('-','', $Post->title);
         $Post->url=preg_replace('/\s+/','-',$title);
         $Post->date_st=time();
-        $Post->date_finish=time();
         $Post->state='1';
-        $Post->id_users='1';
+        $Post->id_users=Auth::user()->id;
 
         if( $request->know == 'on' )
         {
             $Post->knowlage='yes';
-        }
+        } 
         else
         {
             $Post->knowlage='no';
@@ -177,8 +216,23 @@ class mosabegheController extends Controller
     public function edit($id)
     {
         $model=MosabegheModel::find($id);
+        $lang=LanguageModel::orderBy('id_langs','desc')->lists('name','id_langs')->toArray();
+        $model4=ScriptModel::where('masale_id_masale',$id)->orderby('id','desc')->get();
         $model2=PrizeModel::where('id_masale',$id)->first();
-        return View('admin.mosabeghe.edit',['model'=>$model,'model2'=>$model2]);
+        $model3=DataModel::where('id_masale',$model->id)->orderby('id','desc')->get();
+
+        $model5=MemberModel::where('id_masale',$id)->get();
+        $array2=array();  
+        $j=0;
+        foreach ($model5 as $model5) 
+        {
+            $array2[$j]=$model5->id_user;
+            $j++;
+        }
+
+        $model6=User::orderby('id','desc')->find($array2);
+
+        return View('admin.mosabeghe.edit',['model'=>$model,'model2'=>$model2,'model3'=>$model3,'lang'=>$lang,'model4'=>$model4,'model6'=>$model6]);
     }
 
     /**
@@ -187,12 +241,21 @@ class mosabegheController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function update(Request $request, $id)
     {
          $Post=MosabegheModel::find($id);
          $title=str_replace('-','', $Post->title);
          $Post->url=preg_replace('/\s+/','-',$title);
+
+
+        if( $request->know == 'on' )
+        {
+            $Post->state='1';
+        }
+        else{
+            $Post->state='0';
+        }
 
         if($request->hasfile('img_logo1'))
         {
@@ -205,7 +268,7 @@ class mosabegheController extends Controller
 
         }
 
-
+ 
         if($request->hasfile('img1'))
         {
             $FileName=time().'.'.$request->file('img1')->getClientOriginalExtension();
@@ -233,6 +296,8 @@ class mosabegheController extends Controller
      */
     public function destroy($id)
     {
+        $priza=PrizeModel::where('id_masale',$id)->delete();
+        $data=DataModel::where('id_masale',$id)->delete();
         $mosabeghe=MosabegheModel::find($id)->delete();
         return redirect('admin/mosabeghe');
     }
@@ -258,5 +323,18 @@ class mosabegheController extends Controller
             }
 
         }
+    }
+ 
+    public function deletefile($id)
+    { 
+        $data=DataModel::where('id',$id)->first();
+        $delete=DataModel::where('id',$id)->delete();
+        return redirect('admin/mosabeghe/'.$data->id_masale.'/edit');
+    }
+
+    public function nook()
+    {
+        $model=MosabegheModel::where('state',0)->orderBy('id','desc')->paginate('10');
+        return View('admin.mosabeghaNotOk.index',['model'=>$model]);
     }
 }

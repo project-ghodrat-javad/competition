@@ -52,6 +52,14 @@ class GridView
                   echo '<td>'.$Jdf->jdate('Y/n/j-H:i:s',$model->$array2[$i]).'</td>'; 
                 }
 
+                elseif ( $array2[$i]=='file' ) {
+                  echo '<td><a href="'.asset('resources/upload/file/'.$model->$array2[$i]).'">'.$model->$array2[$i].'</a></td>'; 
+                }
+                
+                elseif ($array2[$i] == 'name') {
+                  echo '<td><a href="'.asset('resources/upload/file/'.$model->$array2[$i]).'">'.$model->$array2[$i].'</a></td>'; 
+                }
+
                 else
                 {
                   echo '<td>'.$model->$array2[$i].'</td>'; 
@@ -61,12 +69,42 @@ class GridView
             }
           }
           echo '<td>';
-
-          $route= asset('/admin/'.$ntable.'/'.$model['id_langs']);
           // url().'/admin/'.$model['table'].'/'.$model->id;
+          if ($ntable=='delete/file') {
+            $route= asset('/admin/'.$ntable.'/'.$model['id']);
           ?>
-          <img src="<?= asset('resources/images/15.gif'); ?>" onclick="del_row('<?= $route ?>')" />
-
+            <a href="<?= $route ?>"><img src="<?= asset('resources/images/15.gif'); ?>"/></a>
+          <?php
+            }
+            elseif ($ntable=='panel/delete/file') {
+              $route= asset('/users/'.$ntable.'/'.$model['id']);
+              ?>
+                 <a href="<?= $route ?>"><img src="<?= asset('resources/images/15.gif'); ?>"/></a>
+              <?php
+            }
+            elseif ($ntable=='panel/datascript/delete') {
+              $route= asset('/users/'.$ntable.'/'.$model['id']);
+              ?>
+                <a href="<?= $route ?>"><img src="<?= asset('resources/images/15.gif'); ?>"/></a>
+              <?php
+            }
+            elseif ( $ntable=='panel/member/datascript/delete' ) {
+              $route= asset('/users/'.$ntable.'/'.$model['id']);
+              ?>
+                <a href="<?= $route ?>"><img src="<?= asset('resources/images/15.gif'); ?>"/></a>
+              <?php
+            }
+            elseif ($ntable=='delete/data/script') {
+              $route= asset('/admin/'.$ntable.'/'.$model['id']);
+              ?>
+              <a href="<?= $route ?>"><img src="<?= asset('resources/images/15.gif'); ?>"/></a>
+              <?php 
+            }
+            else{ 
+              $route= asset('/admin/'.$ntable.'/'.$model['id_langs']);
+          ?>
+            <img src="<?= asset('resources/images/15.gif'); ?>" onclick="del_row('<?= $route ?>')" />
+          <?php } ?>
             
           </td>
           </tr><?php

@@ -103,33 +103,17 @@
                 <li class="" id="all-switch" data-target="competitions-all">همه مسابقات</li>
             </ul>
             <div id="sidebar-all-competitions" style="display: none;">
-                <form id="competitions-sidebar" action="/competitions/search" method="GET">
-                    <!--<h2 id="competitions-found"><span id="sidebar-total-comps-found">13</span> مورد یافت شد,
-                        <span id="sidebar-active-comps-found">13</span> فعال <img src="images/spinner-small.gif" alt="Wait cursor" class="spinner" style="display:none;">
-                    </h2>-->
-                    <input id="search" name="Query" placeholder="جستجوی مسابقه" type="text">
-                    <input id="active-sort" name="RewardColumnSort" value="Descending" type="hidden">
+                <div id="competitions-sidebar">
+                    
                     <div id="competitions-filter">
                         <div class="filter" id="all-or-enterable">
                             <ul>
                                 <li>
                                     <input value="AllCompetitions" id="all" name="SearchVisibility" checked="checked" type="radio">
                                     <label class="checked" for="all">همه مسابقات</label>
+                                    
                                 </li>
                                 <!-- only show if user has entered a comp -->
-                            </ul>
-                        </div>
-                        <div class="filter">
-                            <h3>وضعیت</h3> <!-- Status -->
-                            <ul>
-                                <li>
-                                    <input name="ShowActive" id="active" value="true" checked="checked" type="checkbox">
-                                    <label class="active checked" for="active">فعال</label>
-                                </li>
-                                <li>
-                                    <input name="ShowCompleted" id="completed" value="true" type="checkbox">
-                                    <label class="active" for="completed">کامل</label> 	<!-- Completed -->
-                                </li>
                             </ul>
                         </div>
                         
@@ -137,16 +121,18 @@
                             <h3>حامی</h3>
                             <ul>
                                 <li>
-                                    <input name="ShowInclass" id="inclass" value="true" type="checkbox">
-                                    <label class="inclass" for="inclass">مسابقات دانشجویی</label>
+
+                                    {{ Form::label('دانش') }}
+                                    {{ Form::checkbox('know',null,false,['class'=>'checkclick','onClick'=>'hami()']) }}
+                                    <!-- <input name="ShowInclass" value="true" type="checkbox" onclick="hami();">
+                                    <label class="inclass" for="inclass">مسابقات دانشجویی</label> -->
                                 </li>
                             </ul>
                         </div>
 
 
                     </div>
-                    <input style="display: none;" value="Update" type="submit">
-                </form>
+                </div>
             </div>
         </div>
         <!-- end dashbord left  -->
@@ -177,38 +163,36 @@
                 <table id="competitions-table">
                     <colgroup>
                         <col width="52%">
-                        <col width="16%">
-                        <col width="16%">
-                        <col width="16%">
+                        <col width="24%">
+                        <col width="24%">
                     </colgroup>
                     <thead>
                     <tr>
                         <th class="not-sorted">
-                            <a href="/competitions/search?CompetitionNameColumnSort=Ascending" title="Sort by Competition Name"> نام مسابقه <img alt="Sort" src="<?= asset('resources/images/sort-not-sorted.png'); ?>">  </a>
+                             نام مسابقه 
                         </th>
                         <th class="sorted descending">
-                            <a href="/competitions/search?RewardColumnSort=Ascending" title="Current sorting by Reward descending. Click to reverse."> جایزه <img alt="Sort" src="<?= asset('resources/fonts/css/font-style.css'); ?>images/sort-descending.png">  &nbsp;<!-- extra space to center text --></a>
-                            <input id="current-sort-column-name" value="RewardColumnSort" type="hidden">
-                            <input id="current-sort-direction" value="Descending" type="hidden">
+                             جایزه  
                         </th>
 
+                        
                         <th class="not-sorted">
-                            <a href="/competitions/search?TeamsColumnSort=Descending" title="Sort by Teams"> تیم ها <img alt="Sort" src="<?= asset('resources/images/sort-not-sorted.png'); ?>">  &nbsp;<!-- extra space to center text --></a>
-                        </th>
-                        <th class="not-sorted">
-                            <a href="/competitions/search?DeadlineColumnSort=Descending" title="Sort by Deadline"> آخرین فرصت <img alt="Sort" src="<?= asset('resources/images/sort-not-sorted.png'); ?>">  &nbsp;<!-- extra space to center text --></a>
+                             آخرین فرصت 
                         </th>
                     </tr></thead>
 
-                    <tbody>
+                    <tbody id="box2">
 
 
 
                     @yield('content2')
 
 
-
                     </tbody>
+                    <tbody id="box3">
+                       @yield('content3') 
+                    </tbody>
+
                 </table>
             </div>
         </div>
@@ -252,53 +236,9 @@
 
             var currentCompetitionsSidebarAjaxRequest = null;
 
-            // find-a-comp submit
-            $('#competitions-sidebar').submit(function (e) {
-                // stop submit and show spinner
-                e.preventDefault();
-                $('#competitions-sidebar h2 .spinner').css('display', 'inline');
+            
 
-                // get form action URL
-                url = $(this).attr('action');
-
-                // create form data array
-                dataArray = $(this).serializeArray();
-
-                if (currentCompetitionsSidebarAjaxRequest) {
-                    currentCompetitionsSidebarAjaxRequest.abort();
-                }
-
-                currentCompetitionsSidebarAjaxRequest = $.get(url, dataArray, function (data) {
-                    // display new content
-                    var content = $(data).find('#competitions-all').contents();
-                    $('#competitions-all').html(content);
-                    $('#active-sort').name = content.find('#current-sort-column-name').attr("value");
-                    $('#active-sort').value = content.find('#current-sort-direction').attr("value");
-
-                    // update totals
-                    $('#competitions-found').html($(data).find('#competitions-found').html());
-                    $('#page-number').html($(data).find('#page-number').html());
-
-                    //hide spinner
-                    $('#competitions-sidebar h2 .spinner').css('display', 'none');
-                });
-            });
-
-            $('#competitions-sidebar input[type=text]').bind('input keyup', function () {
-                // Wait 300 milli after last input to submit
-                var delay = 300;
-                var $this = $(this);
-
-                clearTimeout($this.data('timer'));
-                $this.data('timer', setTimeout(function () {
-                    $this.removeData('timer');
-                    $('#competitions-sidebar').submit();
-                }, delay));
-            });
-
-            $('#competitions-sidebar input[type=radio], #competitions-sidebar input[type=checkbox]').click(function () {
-                $('#competitions-sidebar').submit();
-            });
+            
         });
     </script>
 
@@ -338,6 +278,10 @@
         });
     }
 </script>
+
+
+    @yield('Footer')
+
 </body>
 
 </html>

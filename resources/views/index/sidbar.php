@@ -31,22 +31,60 @@
                         </ul>
                     </li>
 
-                    <li class="cd-forum"><a href="/forum">تالار گفتگو</a></li>
+                    <li class="cd-forum"><a href="<?= Url('/forum'); ?>">تالار گفتگو</a></li>
 
                     <li class="cd-scripts" >
-                        <a class="comp-link" href="/ComDetails/scripts">اسکریپت ها </a>
+                        <a id="open-info">اسکریپت</a>
                         <ul class="flyout" style="border-left: 2px none; margin: 10px;">
-                            <li><a href="ComDetails/scripts/new">اسکریپت جدید</a></li>
-                            <li><a href="/ComDetails/scripts/notebook">نوشته جدید</a></li>
+
+
+                            <?php
+                                use App\MemberModel;
+                                if ( Auth::check() )
+                                {
+                                    $id_user = Auth::user()->id;
+                                    if ( $id_user == $mosabeghe->id_users ) {
+                                        ?>
+                                        <li><a href="<?= Url('users/panel/mosabeghe/'.$mosabeghe->id.'/edit'); ?>">اسکریپت جدید</a></li>
+                                        <?php
+                                    }
+                                    else{
+                                        $state = MemberModel::where(['id_user'=>$id_user,'id_masale'=>$mosabeghe->id])->first();
+                                        if ( $state == null ) {
+                                            //not vorod
+                                        }
+                                        else{
+                                            $date='+'.$mosabeghe->date_finish.' day';
+                                            $created=strtotime($date, $mosabeghe->date_st);
+                                            $datenow=time();
+                                            if ( $created >= $datenow ) {
+                                                ?>
+                                                    <li><a href="<?= Url('users/panel/member/'.$mosabeghe->id.'/edit'); ?>">اسکریپت جدید</a></li>
+                                                <?php
+                                            }
+                                            else
+                                            {
+                                                //end time
+                                            }
+                                        }
+                                    }
+                                }
+                                else{
+                                    //not login
+                                }
+                            ?>
+
+
+                            <li><a href="<?= Url('/script/'.$mosabeghe->url.'/showscripts'); ?>">نمایش اسکریپت</a></li>
                         </ul>
                     </li>
 
-                    <li class="cd-leaderboard">
+                    <!-- <li class="cd-leaderboard">
                         <a href="/team">ایجاد تیم</a>
                         <a href="https://www.kaggle.com/c/draper-satellite-image-chronology/leaderboard">سایر</a>
                         <a href="https://www.kaggle.com/c/draper-satellite-image-chronology/leaderboard">سایر</a>
                         <a href="https://www.kaggle.com/c/draper-satellite-image-chronology/leaderboard">سایر</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             

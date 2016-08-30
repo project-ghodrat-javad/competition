@@ -3,11 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 use App\Http\Requests;
 
 class adminController extends Controller
 {
+
+
+    public function __construct()
+    {
+
+        if ( Auth::check() )
+        {
+            $roule = Auth::user()->roule;
+
+            if( $roule != '1' ){
+                return redirect('/users/panel')->send();   
+            }
+        }
+        else{
+
+            return redirect('login')->send();
+
+        }
+          // $this->middleware('auth'); 
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -81,6 +102,5 @@ class adminController extends Controller
      */
     public function destroy($id)
     {
-        //
     }
 }

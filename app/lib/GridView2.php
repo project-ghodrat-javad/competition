@@ -4,6 +4,7 @@ use Illuminate\Html\FormFacade;
 use App\lib\Jdf;
 use Session;
 use App\User;
+use App\LanguageModel;
 class GridView2
 {
    public static function view($array1,$array2,$model,$update=true,$total,$ntable)
@@ -41,6 +42,31 @@ class GridView2
                   echo '<td>'.$Jdf->jdate('Y/n/j-H:i:s',$model->$array2[$i]).'</td>'; 
                 }
 
+                elseif ($array2[$i]=='time_creat') {
+                  echo '<td>'.$Jdf->jdate('Y/n/j-H:i:s',$model->$array2[$i]).'</td>'; 
+                }
+
+                elseif ($array2[$i]=='state') {
+
+                  if($model->$array2[$i]== '0')
+                  {
+                    echo '<td style="color:red;"> غیر فعال می باشد </td>';
+                  }
+                  elseif( $model->$array2[$i] == '1' )
+                  {
+                    echo '<td style="color:green;"> فعال می باشد </td>';
+                  }
+                  else
+                  {
+                    echo '<td>'.$model->$array2[$i].'</td>'; 
+                  }
+
+                }
+                elseif ( $array2[$i]=='file' ) {
+                  echo '<td><a href="'.asset('resources/upload/file/'.$model->$array2[$i]).'">'.$model->$array2[$i].'</a></td>'; 
+                }
+
+
                 elseif ($array2[$i]=='date_st') {
 
                   echo '<td>'.$Jdf->jdate('Y/n/j-H:i:s',$model->$array2[$i]).'</td>'; 
@@ -55,6 +81,36 @@ class GridView2
                 {
                   $username=User::find($model->$array2[$i])['name'];
                   echo '<td>'.$username.'</td>'; 
+                }
+
+                elseif ($array2[$i] == 'langs_id_langs') {
+                  $namelang=LanguageModel::where('id_langs',$model->$array2[$i])->first()['name'];
+                  echo '<td>'.$namelang.'</td>'; 
+                }
+
+                elseif($array2[$i]=='roule')
+                {
+                  if( $model->$array2[$i]!='1' )
+                  {
+                    echo '<td style="color:blue;"> مشترک </td>';
+                  }
+                  else
+                  {
+                    echo '<td style="color:green;"> مدیر </td>'; 
+                  }
+                }
+
+
+                elseif ($array2[$i]=='img') {
+
+                  if ($model->$array2[$i] != '') {
+                    $imgurl=Url('/resources/upload/profile/'.$model->$array2[$i]);
+                    echo '<td><img src="'. $imgurl .'" width="50px;" height="50px;" /></td>';
+                  }
+                  else
+                  {
+                    echo '<td>'.$model->$array2[$i].'</td>'; 
+                  }
                 }
 
                 else

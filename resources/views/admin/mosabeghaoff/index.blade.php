@@ -11,10 +11,9 @@
 use App\lib\GridView2;
 $array1=array('ردیف','عنوان ','پرسش ','زمان شروع','زمان خاتمه','لینک','کاربر','عملیات');
 $array2=array('-','title','question','date_st','date_finish','url','id_users');
-$GridView=GridView2::view($array1,$array2,$model,$page,$total,$ntable='mosabegheoff');
+$GridView=GridView2::view($array1,$array2,$model,$page,$total,$ntable='mosabeghe');
 
 ?>
 
-{!! $model->render() !!}
 
 @endsection

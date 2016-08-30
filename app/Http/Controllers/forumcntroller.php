@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\TopicModel;
 use App\Http\Requests;
 use App\AnsewerModel;
+use Auth;
 
 class forumcntroller extends Controller
 {
@@ -30,7 +31,7 @@ class forumcntroller extends Controller
         //
     }
 
-    /**
+    /** 
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
